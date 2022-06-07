@@ -24,8 +24,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //costumer
 Route::get('v1/customer', [CustomerController::class, 'index']);
 Route::get('v1/customer/{id}', [CustomerController::class, 'show']);
+Route::put('v1/customer/{id}', [CustomerController::class, 'update']);
 //delete
-Route::delete('v1/customer/{id}', [CustomerController::class, 'destroy']);
+
+Route::delete('v1/customer/{id}', [CustomerController::class, 'delete']);
 //tambah
 Route::post('v1/customer', [CustomerController::class, 'store']);
 
